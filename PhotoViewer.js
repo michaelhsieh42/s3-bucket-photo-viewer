@@ -106,7 +106,7 @@ function listAlbums() {
 // snippet-start:[s3.JavaScript.s3_PhotoViewer.viewAlbum]
 // Show the photos that exist in an album.
 function viewAlbum(albumName) {
-  var albumPhotosKey = encodeURIComponent(albumName) + '/';
+  var albumPhotosKey = decodeURIComponent(albumName) + '/';
   console.log("albumPhotosKey is " + albumPhotosKey);
   s3.listObjects({Prefix: albumPhotosKey}, function(err, data) {
     if (err) {
@@ -125,7 +125,7 @@ function viewAlbum(albumName) {
         '<span>',
           '<div>',
             '<br/>',
-            '<img style="width:128px;height:128px;" src="' + photoUrl + '"/>',
+            '<img style="width:400px;height:225px;" src="' + photoUrl + '"/>',
           '</div>',
           '<div>',
             '<span>',
