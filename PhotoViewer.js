@@ -115,6 +115,7 @@ function viewAlbum(albumName) {
     var href = this.request.httpRequest.endpoint.href;
     var bucketUrl = href + albumBucketName + '/';
     console.log("bucket is " + bucketUrl);
+    console.log("data is " + data.Contents);
     var photos = data.Contents.map(function(photo) {
       var photoKey = photo.Key;
       var photoUrl = bucketUrl + encodeURIComponent(photoKey);
@@ -133,6 +134,7 @@ function viewAlbum(albumName) {
         '</span>',
       ]);
     });
+    console.log("photos is " + photos);
     var message = photos.length ?
       '<p>The following photos are present.</p>' :
       '<p>There are no photos in this album.</p>';
