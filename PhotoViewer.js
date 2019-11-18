@@ -36,7 +36,7 @@
 // **DO THIS**:
 //   Replace BUCKET_NAME with the bucket name.
 //
-var albumBucketName = 'mb-logo-detection-frames';
+var albumBucketName = 'mb-logo-detection-inference-visual';
 
 // **DO THIS**:
 //   Replace this block of code with the sample code located at:
