@@ -74,8 +74,9 @@ function listAlbums() {
     } else {
       var albums = data.CommonPrefixes.map(function(commonPrefix) {
         var prefix = commonPrefix.Prefix;
-        console.log(prefix);
+        
         var albumName = decodeURIComponent(prefix.replace('/', ''));
+        console.log(albumName);
         return getHtml([
           '<li>',
             '<button style="margin:5px;" onclick="viewAlbum(\'' + albumName + '\')">',
@@ -113,11 +114,11 @@ function viewAlbum(albumName) {
     // 'this' references the AWS.Response instance that represents the response
     var href = this.request.httpRequest.endpoint.href;
     var bucketUrl = href + albumBucketName + '/';
-
+    console.log("bucket is " + bucketUrl);
     var photos = data.Contents.map(function(photo) {
       var photoKey = photo.Key;
       var photoUrl = bucketUrl + encodeURIComponent(photoKey);
-      console.log(photoUrl);
+      console.log("photo is " + photoUrl);
       return getHtml([
         '<span>',
           '<div>',
