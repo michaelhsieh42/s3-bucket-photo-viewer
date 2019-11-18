@@ -45,7 +45,7 @@ var albumBucketName = 'mb-logo-detection-frames';
 // Initialize the Amazon Cognito credentials provider
 AWS.config.region = 'us-west-2'; // Region
 AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: 'us-west-2:cc868107-65b7-46f9-97f1-8351e926c2ce',
+    IdentityPoolId: 'us-west-2:eea86cd9-bbb2-4536-afdd-95c98a8c47c1',
 });
 
 // Create a new service object
