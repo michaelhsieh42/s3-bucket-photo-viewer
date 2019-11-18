@@ -74,6 +74,7 @@ function listAlbums() {
     } else {
       var albums = data.CommonPrefixes.map(function(commonPrefix) {
         var prefix = commonPrefix.Prefix;
+        console.log(prefix);
         var albumName = decodeURIComponent(prefix.replace('/', ''));
         return getHtml([
           '<li>',
@@ -116,6 +117,7 @@ function viewAlbum(albumName) {
     var photos = data.Contents.map(function(photo) {
       var photoKey = photo.Key;
       var photoUrl = bucketUrl + encodeURIComponent(photoKey);
+      console.log(photoUrl);
       return getHtml([
         '<span>',
           '<div>',
